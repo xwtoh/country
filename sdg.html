@@ -23,7 +23,48 @@ html, body, h1, h2, h3, h4, h5, h6 {
          top: 50%;   
         }
   
+        #title::after{
+            width: 25px; height: 25px; 
+            border-radius: 50%; 
+            border: 2px solid #fff;
+            display: inline-block; 
+            vertical-align: middle; 
+            font-size: 15px;
+            content: "?"
+        }    
         
+        #title2::after{
+            width: 25px; height: 25px; 
+            border-radius: 50%; 
+            border: 2px solid #fff;
+            display: inline-block; 
+            vertical-align: middle; 
+            font-size: 15px;
+            content: "\00D7"
+        }
+        
+        #desc1{
+            display: none;
+            transition: 1s;
+            z-index: 98;
+            height: auto;
+            padding-bottom: 5px;
+            margin: 0;
+             background-color: #2962FF;
+        }
+        .qn:hover{
+            background: #fff;
+            color: #2962FF;
+            transition: 0.3s;
+            z-index: 99;
+        }
+                .qn{
+            background: transparent;
+            color: #fff;
+            transition: 0.3s;
+            z-index: 99;
+        }
+
         
         .number{
             position: relative;
@@ -125,9 +166,7 @@ svg
   background-color: transparent;}
         
     </style>
-    
 
-    
 </head>
 <body>
 
@@ -174,8 +213,11 @@ svg
                  <h2 style="transform: translateY(-30px); color: #fff;">Vietnam</h2>
         </div>    
       
-    <div class="w3-third">
-        <p style="font-weight: bold; color: #fff">Index score</p>
+    <div class="w3-third" style="position: relative;">
+        
+        <p id="title" style="font-weight: bold; color: #fff" onclick="showdesc1()">Index score&nbsp;&nbsp;</p>    
+
+        <p style="position: absolute; top: 0; left: 0; color: #fff;" id="desc1"><b id="title2" onclick="showdesc1()">Index score&nbsp;&nbsp;</b><br><br>The index score measures a country's total progress towards achieving all 17 SDGs. The score can be interpreted as a percentage of SDG achievement. A score of 100 indicates that all SDGs have been achieved.<br></p>
 <svg
    class="progress-ring"
    width="120"
@@ -237,7 +279,7 @@ svg
                  <h2 style="transform: translateY(-60px); color: #fff;">Vietnam</h2>
         </div>    
         
-    <div class="w3-third">
+    <div class="w3-third" style="position: relative">
         <p style="font-weight: bold; color: #fff">Regional average score</p>
         
         <svg
@@ -983,6 +1025,16 @@ input2.addEventListener('change', function(e) {
     setProgress2(input2.value);
   }  
 })
+        
+        
+function showdesc1() {
+  var x = document.getElementById("desc1");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}        
 
 function loadFrame() {
 document.getElementById('input').value = 74;
@@ -1007,8 +1059,6 @@ document.getElementById("trend14").style.transform = "rotate(90deg)";
 };
         
 window.onload = setTimeout(loadFrame, 1000);
-
-
 
     </script>
     
