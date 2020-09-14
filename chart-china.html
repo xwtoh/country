@@ -1,0 +1,227 @@
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+	<script src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
+    
+<script>
+    
+    var chartColors = {
+	red: 'rgb(255, 99, 132)',
+	blue: 'rgb(54, 162, 235)'
+};
+
+    
+    
+var color = Chart.helpers.color;
+var config = {
+	type: 'bar',
+	data: {
+		datasets: [{
+			yAxisID: 'singapore',
+			backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
+			borderColor: 'transparent'
+		},{
+			yAxisID: 'test1',
+			backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
+			borderColor: 'transparent'
+		}
+ ]
+	},
+	plugins: [ChartDataSource],
+	options: {
+        responsive: true, 
+maintainAspectRatio: false,
+      animation: {
+duration: 300,
+onComplete: function () {
+    // render the value of the chart above the bar
+    var ctx = this.chart.ctx;
+    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
+    ctx.fillStyle = this.chart.config.options.defaultFontColor;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    this.data.datasets.forEach(function (dataset) {
+        for (var i = 0; i < dataset.data.length; i++) {
+            var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model;
+            ctx.fillText(dataset.data[i], model.x, model.y - 5);
+        }
+    });
+}},
+		title: {
+			display: false,
+			text: ''
+		},
+		scales: {
+			xAxes: [{
+				scaleLabel: {
+					display: true,
+					labelString: '6 Dimensions'
+				}
+			}],
+			yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 100,
+                    min: 0,
+                    legend: false
+                },
+				id: 'singapore',
+				gridLines: {
+					drawOnChartArea: false,
+			}}, {
+                                ticks: {
+                    beginAtZero: true,
+                    max: 100,
+                    min: 0,    
+                display: false
+                },
+				id: 'test1',
+				gridLines: {
+					drawOnChartArea: false,
+                    display: false
+				}
+			}
+			]
+		},
+		plugins: {
+			datasource: {
+				type: 'sheet',
+				url: 'sample-dataset-china.xlsx',
+				rowMapping: 'dataset',
+				datasetLabels: 'Sheet1!A2:A3',
+				indexLabels: 'Sheet1!B1:G1',
+				data: 'Sheet1!B2:G3'
+			}
+		}
+	},
+    
+};
+
+window.onload = function() {
+	var ctx = document.getElementById('myChart').getContext('2d');
+	window.myChart = new Chart(ctx, config);
+    
+};
+    
+    
+    //countryStart
+function addVietnam() {
+    var newDataset = {
+        label: "Vietnam",
+        backgroundColor: 'rgba(99, 255, 132, 0.2)',
+        borderColor: 'rgba(99, 255, 132, 1)',
+        borderWidth: 1,
+        data: [70,	20,	40,	30,	57,	35],
+    }
+    config.data.datasets.push(newDataset);
+  document.getElementById("remove").style.transform = "scaleX(1)";  document.getElementById("add").style.transform = "scaleX(0)";
+    myChart.update();
+}    
+
+function removeVietnam() {
+config.data.datasets = config.data.datasets.filter(function(obj) {
+    return (obj.label != 'Vietnam'); 
+});
+  document.getElementById("remove").style.transform = "scaleX(0)";  document.getElementById("add").style.transform = "scaleX(1)";
+myChart.update();
+}
+    //countryEnd
+    
+        //countryStart
+function addPhili() {
+    var newDataset = {
+        label: "Philippines",
+        backgroundColor: 'rgba(106, 90, 205, 0.2)',
+        borderColor: 'rgba(106, 90, 205, 1)',
+        borderWidth: 1,
+        data: [94, 32,	64,	44,	27,	42],
+    }
+    config.data.datasets.push(newDataset);
+  document.getElementById("remove2").style.transform = "scaleX(1)";  document.getElementById("add2").style.transform = "scaleX(0)";
+    myChart.update();
+}    
+
+function removePhili() {
+config.data.datasets = config.data.datasets.filter(function(obj) {
+    return (obj.label != 'Philippines'); 
+});
+  document.getElementById("remove2").style.transform = "scaleX(0)";  document.getElementById("add2").style.transform = "scaleX(1)";
+myChart.update();
+}
+    //countryEnd
+    
+            //countryStart
+function addUSA() {
+    var newDataset = {
+        label: "USA",
+        backgroundColor: 'rgba(255, 165, 0, 0.2)',
+        borderColor: 'rgba(255, 165, 0, 1)',
+        borderWidth: 1,
+        data: [40,	91,	62,	46,	26,	68],
+    }
+    config.data.datasets.push(newDataset);
+  document.getElementById("remove3").style.transform = "scaleX(1)";  document.getElementById("add3").style.transform = "scaleX(0)";
+    myChart.update();
+}    
+
+function removeUSA() {
+config.data.datasets = config.data.datasets.filter(function(obj) {
+    return (obj.label != 'USA'); 
+});
+  document.getElementById("remove3").style.transform = "scaleX(0)";  document.getElementById("add3").style.transform = "scaleX(1)";
+myChart.update();
+}
+    //countryEnd
+    
+    </script>    
+    <style>
+        
+
+        button{
+            padding: 0 6px;
+            border-color: transparent;
+            background-color: transparent;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        #add,#add2,#add3{
+            transform: scaleX(1);
+            transition: all 0.3s;
+            transform-origin: left;
+            position: absolute;
+            background-color: mediumseagreen;
+        }        
+        #remove,#remove2,#remove3{
+            transform: scaleX(0);
+            transition: all 0.3s;
+            transform-origin: right;
+            position: absolute;
+            background-color: lightcoral;
+        }
+        
+    </style>        
+</head>
+<body>
+
+<div style="height: 80vh">		<canvas id="myChart"></canvas>
+    </div>
+    
+    
+<div style="height: 20vh; position: relative;">
+    <div style="width: 90px; height: 20px; position: relative; float: left">
+        <button class="add" id="add" onclick="addVietnam()">+ Vietnam</button>
+        <button class="remove" id="remove" onclick="removeVietnam()">- Vietnam</button>
+    </div>
+    <div style="width: 105px; height: 20px; position: relative; float: left">
+
+        <button class="add" id="add2" onclick="addPhili()">+ Philippines</button>
+        <button class="remove" id="remove2" onclick="removePhili()">- Philippines</button>
+    </div>
+    <div style="width: 60px; height: 20px; position: relative; float: left">
+        <button class="add" id="add3" onclick="addUSA()">+ USA</button>
+        <button class="remove" id="remove3" onclick="removeUSA()">- USA</button>
+    </div>
+    </div>
+</body>
