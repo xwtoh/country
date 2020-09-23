@@ -12,7 +12,11 @@ html, body, h1, h2, h3, h4, h5, h6 {
         
         #CN-50,#CN-51{
             fill: #FFB6C1;
-        }          
+        }      
+        
+        .map{
+            width: 100%;
+        }
         
         
         #CN-43{
@@ -94,73 +98,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
          top: 0;   
         }
   
-        #title::after,#titleb::after{
-            width: 25px; height: 25px; 
-            border-radius: 50%; 
-            border: 2px solid #fff;
-            display: inline-block; 
-            vertical-align: middle; 
-            font-size: 15px;
-            content: "?"
-        }    
-        
-        #title2::after,#title2b::after{
-            width: 25px; height: 25px; 
-            border-radius: 50%; 
-            border: 2px solid #fff;
-            display: inline-block; 
-            vertical-align: middle; 
-            font-size: 15px;
-            content: "\00D7"
-        }
-        
-        #desc1,
-        #desc2{
-            display: none;
-            transition: 1s;
-            z-index: 98;
-            height: auto;
-            padding-bottom: 5px;
-            margin: 0;
-             background-color: #2962FF;
-            min-height: 155px;
-        }
-        .qn:hover{
-            background: #fff;
-            color: #2962FF;
-            transition: 0.3s;
-            z-index: 99;
-        }
-                .qn{
-            background: transparent;
-            color: #fff;
-            transition: 0.3s;
-            z-index: 99;
-        }
 
-        
-        .number{
-            position: relative;
-            transform: translateY(-105px);
-  opacity:0;
-  -moz-animation   : fadeout 1s linear;
-  -webkit-animation: fadeout 1s linear;
-  animation        : fadeout 1s linear;
-animation-fill-mode: forwards;
-              animation-delay: 1.2s;
-        }
-        
-        #rank{
-            transform: translateY(-10px);
-        }
-@-webkit-keyframes fadeout {
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-@keyframes fadeout {
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
 
 .w3-half{
  background-color: #2962FF;
@@ -172,68 +110,11 @@ animation-fill-mode: forwards;
     position: relative
     
 }    
-        
-        .trend{
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            right: 0;
-            bottom: 0;
-        }        
+
         
 .w3-quarter:hover{
           filter: brightness(85%);
 }    
-
-    #sdg1,#sdg5,#sdg9,#sdg13,#sdg17{
-    border-left: 2px solid white;
-}    
-    #trend1,#trend2,#trend3,#trend4,#trend5,#trend6,#trend7,#trend8,#trend9,#trend10,#trend11,#trend12,#trend13,#trend14,
-        #trend15,
-        #trend16,#trend17
-           {
-
-             transition: 2s;
-}    
-
-    
-
-        
-    
-
-.progress-ring {
-  
-}
-
-.progress-ring__circle {
-  transition: 2s stroke-dashoffset;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-   
-}
-
-input {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  width: 80px;
-    display: none;
-}
-       .red{
-           background: rgb(211, 47, 47);
-        }         
-        .orange{
-           background: rgb(245, 124, 0);
-        }         
-        .yellow{
-           background: rgb(252, 195, 11);
-        }        
-        .green{
-           background: rgb(67, 160, 71);
-        }        
-        .grey{
-           background: #777;
-        }        
         
 svg
 {   
@@ -248,9 +129,8 @@ svg
     
 
     <div class="w3-row w3-center" style="background-color: #151c55;">
-        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created for MapSVG plugin: http://mapsvg.com -->
-<svg class="w3-white" style="fill:#999"
+
+<svg style="fill:#999"
    xmlns:mapsvg="http://mapsvg.com"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
