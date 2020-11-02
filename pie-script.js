@@ -88,7 +88,7 @@ var pie = d3.pie()
 
 // direction of the slice angle (for responsiveness)
 let sliceDirection = 90;
-if(window.matchMedia("(max-width: 767px)").matches) {
+if(window.matchMedia("(max-width: 700px)").matches) {
   sliceDirection = 180;
 }
 
