@@ -194,33 +194,9 @@ body {
     line-height: 24px;
   }
 }
-@media (min-width: 638px) and (max-width: 700px) {
-  div.pie-container {
-    padding: 10px 15%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 80;
-  }
-  div.pie-container #pieChart svg {
-    width: 60%;
-  }
-  div.pie-container #pieText {
-    margin-top: 20px;
-  }
-  div.pie-container #pieText .panel {
-    padding: 0 3px;
-    height: 270px;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 15px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 15px;
-    line-height: 27px;
-  }
-}
 
-@media (min-width: 700.02px) and (max-width: 1314px) {
+
+@media (min-width: 638px) and (max-width: 1314px) {
   div.pie-container {
     padding: 10px 5%;
   }
