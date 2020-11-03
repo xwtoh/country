@@ -108,7 +108,7 @@ body {
     margin-top: 15px;
   }
   div.pie-container #pieText .panel {
-    height: 230px;
+    height: 100%;
     padding: 0;
   }
   div.pie-container #pieText .panel #segmentTitle {
@@ -133,7 +133,7 @@ body {
     margin-top: 15px;
   }
   div.pie-container #pieText .panel {
-    height: 210px;
+    height: 100%;
     padding: 0;
   }
   div.pie-container #pieText .panel #segmentTitle {
@@ -158,7 +158,7 @@ body {
     margin-top: 15px;
   }
   div.pie-container #pieText .panel {
-    height: 200px;
+    height: 100%;
     padding: 0;
   }
   div.pie-container #pieText .panel #segmentTitle {
@@ -184,7 +184,7 @@ body {
   }
   div.pie-container #pieText .panel {
     padding: 0;
-    height: 205px;
+    height: 100%;
   }
   div.pie-container #pieText .panel #segmentTitle {
     padding: 8px;
@@ -209,7 +209,7 @@ body {
   }
   div.pie-container #pieText .panel {
     padding: 0 3px;
-    height: 270px;
+    height: 100%;
   }
   div.pie-container #pieText .panel #segmentTitle {
     padding: 15px;
@@ -228,7 +228,7 @@ body {
     counter-reset: break-point 60;
   }
   div.pie-container #pieText .panel {
-    height: 70%;
+    height: 100%;
   }
   div.pie-container #pieText .panel #segmentTitle {
     padding: 10px;
