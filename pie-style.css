@@ -102,7 +102,7 @@ body {
     counter-reset: break-point 40;
   }
   div.pie-container #pieChart svg {
-    width: 100%;
+    width: 50%;
   }
   div.pie-container #pieText {
     margin-top: 15px;
@@ -127,7 +127,7 @@ body {
     counter-reset: break-point 53;
   }
   div.pie-container #pieChart svg {
-    width: 70%;
+    width: 50%;
   }
   div.pie-container #pieText {
     margin-top: 15px;
@@ -152,7 +152,7 @@ body {
     counter-reset: break-point 60;
   }
   div.pie-container #pieChart svg {
-    width: 70%;
+    width: 50%;
   }
   div.pie-container #pieText {
     margin-top: 15px;
@@ -177,7 +177,7 @@ body {
     counter-reset: break-point 70;
   }
   div.pie-container #pieChart svg {
-    width: 60%;
+    width: 50%;
   }
   div.pie-container #pieText {
     margin-top: 20px;
@@ -204,7 +204,7 @@ body {
     counter-reset: break-point 60;
   }
   div.pie-container #pieText .panel {
-    height: 70%;
+    height: 50%;
   }
   div.pie-container #pieText .panel #segmentTitle {
     padding: 10px;
