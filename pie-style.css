@@ -80,7 +80,7 @@ body {
   width: 100%;
   transition: padding .7s ease, line-height .7s ease;
   padding: 15px 20px 20px;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 28px;
 }
 @media screen and (max-width: 200px) {
