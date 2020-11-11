@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>900AD - 1565</h2>
+      <p><b>Pre Colonial</b><br>The earliest date inscribed is 900AD, on the Laguna Copperplate Inscription, which is a legal document inscribed on a copper plate in 900 CE, the earliest known calendar-dated document found in the Philippines. 
+</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1565-1989</h2>
+      <p><b>Spanish period</b><br>The Philippines was included in the vast territory of the Kingdom of Spain, in the first constitution of Spain promulgated in Cadiz in 1812. It was never a colony as modern-day historical literature would say, but an overseas region in Asia.<br><br> 
+          <span style="font-size: 70%">Spanish Constitution 1812</span>
+</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1899-1901</h2>
+        <p><b>First Republic</b><br>On January 23, 1899, the First Philippine Republic was proclaimed under Asia's first democratic constitution, with Aguinaldo as its president. <br><br>
+<span style="font-size: 70%">"Philippine History". DLSU-Manila. Archived from the original on August 22, 2006. Retrieved August 21, 2006.</span>
+</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1898-1942</h2>
+      <p><b>American period</b><br>Filipinos initially saw their relationship with the United States as that of two nations joined in a common struggle against Spain. However, the United States later distanced itself from the interests of the Filipino insurgents. Emilio Aguinaldo was unhappy that the United States would not commit to paper a statement of support for Philippine independence. <br><br>The islands were ceded by Spain to the United States alongside Puerto Rico and Guam as a result of the latter's victory in the Spanish–American War. A compensation of US$20 million was paid to Spain according to the terms of the 1898 Treaty of Paris. Relations deteriorated and tensions heightened as it became clear that the Americans were in the islands to stay.<br><br>
+          <span style="font-size: 70%">Lacsamana, Leodivico Cruz (1990). <i>Philippine History and Government</i> (Second ed.). Phoenix Publishing House, Inc. ISBN 978-971-06-1894-1, p135<br>
+Dolan, Ronald E., ed. (1991). "Spanish American War". Philippines: A Country Study. Washington: GPO for the Library of Congress. ISBN 978-0-8444-0748-7.<br>
+Halstead, M (1898). "The Story of the Philippines". Nature. 70 (1811): 248–249. Bibcode:1904Natur..70..248T. doi:10.1038/070248a0.
+ Price, Michael G. (2002). Foreword. In A.B. Feuer, America at War: the Philippines, 1898–1913 (pp. xiii–xvi). Westport, 
+          </span>
+</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1942-1945</h2>
+      <p><b>World War II and Japanese occupation</b><br>   
+ Japan launched an attack on the Philippines on December 8, 1941, ten hours after their attack on Pearl Harbor. Manila, declared an open city to prevent its destruction, was occupied by the Japanese on 2 January 1942.
+   <br><br>
+As at Pearl Harbor, American aircraft were severely damaged in the initial Japanese attack. Lacking air cover, the American Asiatic Fleet in the Philippines withdrew to Java on 12 December 1941. General Douglas MacArthur was ordered out, leaving his men at Corregidor on the night of 11 March 1942 for Australia, 4,000 km away.
+<br><br>          
+The 76,000 starving and sick American and Filipino defenders in Bataan surrendered on 9 April 1942, and were forced to endure the infamous Bataan Death March on which 7,000–10,000 died or were murdered. The 13,000 survivors on Corregidor surrendered on 6 May.
+<br><br>
+Japan occupied the Philippines for over three years, until the surrender of Japan. A highly effective guerilla campaign by Philippine resistance forces controlled sixty percent of the islands, mostly jungle and mountain areas. MacArthur supplied them by submarine, and sent reinforcements and officers.<br><br>
+    <span style="font-size: 70%">        
+          
+          MacArthur General Staff (1994). "The Japanese Offensive in the Philippines". <i>Report of General MacArthur: The Campaigns of MacArthur in the Pacific Volume I</i>. GEN Harold Keith Johnson, BG Harold Nelson, Douglas MacArthur. United States Army. p. 6. LCCN 66-60005. Retrieved 24 March 2013.
+          <br>
+          "Manila Occupied by Japanese Forces". <i>Sunday Morning Herald</i>. 3 January 1942. Retrieved 24 March 2013.<br>
+          "Timeline: World War II in the Philippines". <i>American Experience</i>. WGBH. 1999. Retrieved 24 March 2013.<br>
+          Kintanar, Thelma B.; Aquino, Clemen C. (2006). <i>Kuwentong Bayan: Noong Panahon Ng Hapon : Everyday Life in a Time of War</i>. UP Press. p. 564. ISBN 978-971-542-498-1. Retrieved 24 March 2013.
+          </span>
+        </p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1946-1965</h2>
+      <p><b>Third to fifth republic</b><br>   </p>
+      <ul><li>Administration of Manuel Roxas (1946–1948)</li>
+<li>Administration of Elpidio Quirino (1948–1953)</li>
+<li>Administration of Ramon Magsaysay (1953–1957)</li>
+<li>Administration of Carlos P. Garcia (1957–1961)</li>
+<li>Administration of Diosdado Macapagal (1961–1965)</li>
+<li>Marcos era (1965–1986)</ul>
+   
+    </div>
+  </div>
+    <div class="container left">
+    <div class="content">
+      <h2>1986 - Present</h2>
+      <p><b>Post-People Power era</b><br>The People Power Revolution was a series of popular demonstrations in the Philippines, mostly in Metro Manila, from February 22–25, 1986. <br><br>There was a sustained campaign of civil resistance against regime violence and electoral fraud. The nonviolent revolution led to the departure of Ferdinand Marcos, the end of his 20-year presidential term and the restoration of democracy in the Philippines.</p>
+        
+<ul>
+    <li>Corazon Aquino administration (1986–1992)</li>
+<li>Fidel Ramos administration (1992–1998)</li>
+<li>Joseph Estrada administration (1998–2001)</li>
+<li>Gloria Macapagal Arroyo administration (2001–2010)</li>
+<li>Benigno Aquino III administration (2010–2016)</li>
+<li>Rodrigo Duterte administration (2016–present)</li>        
+</ul>        
+    
+        <p style="font-size: 70%"> "The Original People Power Revolution". QUARTET p. 77. Archived from the original on February 15, 2008. Retrieved February 28, 2008.</p>
+        
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
