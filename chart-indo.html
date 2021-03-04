@@ -88,9 +88,9 @@ onComplete: function () {
 				type: 'sheet',
 				url: 'sample-dataset.xlsx',
 				rowMapping: 'dataset',
-				datasetLabels: 'philippines!A2:A3',
-				indexLabels: 'philippines!B1:G1',
-				data: 'philippines!B2:G3'
+				datasetLabels: 'indonesia!A2:A3',
+				indexLabels: 'indonesia!B1:G1',
+				data: 'indonesia!B2:G3'
 			}
 		}
 	},
@@ -102,7 +102,28 @@ window.onload = function() {
 	window.myChart = new Chart(ctx, config);
     
 };
-    
+       //countryStart
+function addPhili() {
+    var newDataset = {
+        label: "Philippines",
+        backgroundColor: 'rgba(99, 255, 132, 0.2)',
+        borderColor: 'rgba(99, 255, 132, 1)',
+        borderWidth: 1,
+        data: [94,	32,	64,	44,	27,	42],
+    }
+    config.data.datasets.push(newDataset);
+  document.getElementById("remove").style.transform = "scaleX(1)";  document.getElementById("add").style.transform = "scaleX(0)";
+    myChart.update();
+}    
+
+function removePhili() {
+config.data.datasets = config.data.datasets.filter(function(obj) {
+    return (obj.label != 'Vietnam'); 
+});
+  document.getElementById("remove").style.transform = "scaleX(0)";  document.getElementById("add").style.transform = "scaleX(1)";
+myChart.update();
+}
+    //countryEnd 
     
     //countryStart
 function addVietnam() {
@@ -221,6 +242,10 @@ myChart.update();
     <div style="width: 60px; height: 20px; position: relative; float: left">
         <button class="add" id="add3" onclick="addUSA()">+ USA</button>
         <button class="remove" id="remove3" onclick="removeUSA()">- USA</button>
+    </div>
+        <div style="width: 120px; height: 20px; position: relative; float: left">
+        <button class="add" id="add" onclick="addPhili()">+ Philippines</button>
+        <button class="remove" id="remove" onclick="removePhili()">- Philippines</button>
     </div>
     </div>
 </body>
