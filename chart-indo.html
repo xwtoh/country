@@ -112,15 +112,15 @@ function addPhili() {
         data: [94,	32,	64,	44,	27,	42],
     }
     config.data.datasets.push(newDataset);
-  document.getElementById("remove").style.transform = "scaleX(1)";  document.getElementById("add").style.transform = "scaleX(0)";
+  document.getElementById("remove4").style.transform = "scaleX(1)";  document.getElementById("add").style.transform = "scaleX(0)";
     myChart.update();
 }    
 
 function removePhili() {
 config.data.datasets = config.data.datasets.filter(function(obj) {
-    return (obj.label != 'Vietnam'); 
+    return (obj.label != 'Philippines'); 
 });
-  document.getElementById("remove").style.transform = "scaleX(0)";  document.getElementById("add").style.transform = "scaleX(1)";
+  document.getElementById("remove4").style.transform = "scaleX(0)";  document.getElementById("add").style.transform = "scaleX(1)";
 myChart.update();
 }
     //countryEnd 
@@ -206,14 +206,14 @@ myChart.update();
             font-size: 15px;
         }
 
-        #add,#add2,#add3{
+        #add,#add2,#add3,#add4{
             transform: scaleX(1);
             transition: all 0.3s;
             transform-origin: left;
             position: absolute;
             background-color: mediumseagreen;
         }        
-        #remove,#remove2,#remove3{
+        #remove,#remove2,#remove3,#remove4{
             transform: scaleX(0);
             transition: all 0.3s;
             transform-origin: right;
