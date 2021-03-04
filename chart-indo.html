@@ -112,7 +112,7 @@ function addPhili() {
         data: [94,	32,	64,	44,	27,	42],
     }
     config.data.datasets.push(newDataset);
-  document.getElementById("remove4").style.transform = "scaleX(1)";  document.getElementById("add").style.transform = "scaleX(0)";
+  document.getElementById("remove4").style.transform = "scaleX(1)";  document.getElementById("add4").style.transform = "scaleX(0)";
     myChart.update();
 }    
 
@@ -120,7 +120,7 @@ function removePhili() {
 config.data.datasets = config.data.datasets.filter(function(obj) {
     return (obj.label != 'Philippines'); 
 });
-  document.getElementById("remove4").style.transform = "scaleX(0)";  document.getElementById("add").style.transform = "scaleX(1)";
+  document.getElementById("remove4").style.transform = "scaleX(0)";  document.getElementById("add4").style.transform = "scaleX(1)";
 myChart.update();
 }
     //countryEnd 
